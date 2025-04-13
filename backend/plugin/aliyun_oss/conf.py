@@ -4,13 +4,13 @@ from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from backend.core.path_conf import BasePath
+from backend.core.path_conf import BASE_PATH
 
 
 class OssSettings(BaseSettings):
-    """xxx Settings"""
+    """oss Settings"""
 
-    model_config = SettingsConfigDict(env_file=f'{BasePath}/.env', env_file_encoding='utf-8', extra='ignore')
+    model_config = SettingsConfigDict(env_file=f'{BASE_PATH}/.env', env_file_encoding='utf-8', extra='ignore')
 
     # Env oss
     OSS_ACCESS_KEY: str
@@ -23,7 +23,7 @@ class OssSettings(BaseSettings):
 
 @lru_cache
 def get_oss_settings() -> OssSettings:
-    """获取 xxx 配置"""
+    """获取 oss 配置"""
     return OssSettings()
 
 
