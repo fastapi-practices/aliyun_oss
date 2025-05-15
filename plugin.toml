@@ -1,0 +1,12 @@
+[plugin]
+summary = '阿里云 OSS'
+version = '0.0.1'
+description = '阿里云 oss 文件上传'
+author = 'wu-clan'
+
+[app]
+include = 'admin'
+
+[api.oss]
+prefix = '/oss'
+tags = '阿里云 OSS'
