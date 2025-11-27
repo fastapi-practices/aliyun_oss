@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 from typing import Annotated
 
 from fastapi import APIRouter, File, UploadFile
@@ -13,15 +11,8 @@ from backend.utils.file_ops import upload_file_verify
 router = APIRouter()
 
 
-@router.post('/image', summary='上传图片', dependencies=[DependsJwtAuth])
-async def oss_image(file: Annotated[UploadFile, File()]) -> ResponseSchemaModel[UploadUrl]:
-    upload_file_verify(file)
-    url = await oss_put_object(file)
-    return response_base.success(data={'url': url})
-
-
-@router.post('/video', summary='上传视频', dependencies=[DependsJwtAuth])
-async def oss_video(file: Annotated[UploadFile, File()]) -> ResponseSchemaModel[UploadUrl]:
+@router.post('/upload', summary='OSS 文件上传', dependencies=[DependsJwtAuth])
+async def oss_upload_files(file: Annotated[UploadFile, File()]) -> ResponseSchemaModel[UploadUrl]:
     upload_file_verify(file)
     url = await oss_put_object(file)
     return response_base.success(data={'url': url})

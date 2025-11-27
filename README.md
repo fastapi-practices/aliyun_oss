@@ -22,5 +22,3 @@
    OSS_BUCKET_NAME: str = 'fba-test'
    OSS_ENDPOINT: str = 'https://oss-cn-hangzhou.aliyuncs.com'
    ```
-
-

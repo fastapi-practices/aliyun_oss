@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import oss2
 
 from asgiref.sync import sync_to_async
@@ -27,10 +25,10 @@ def oss_put_object(file: UploadFile) -> str:
     :return:
     """
     filename = build_filename(file)
-    buket = get_oss_buket()
     try:
+        buket = get_oss_buket()
         res = buket.put_object(filename, file.file)
     except Exception as e:
-        log.error(f'上传文件 {filename} 失败：{str(e)}')
+        log.error(f'上传文件 {filename} 失败：{e!s}')
         raise errors.RequestError(msg='上传文件失败')
     return res.resp.response.url
