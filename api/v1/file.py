@@ -5,7 +5,7 @@ from fastapi import APIRouter, File, UploadFile
 from backend.common.dataclasses import UploadUrl
 from backend.common.response.response_schema import ResponseSchemaModel, response_base
 from backend.common.security.jwt import DependsJwtAuth
-from backend.plugin.aliyun_oss.utils.file_ops import oss_put_object
+from backend.plugin.oss.utils.file_ops import oss_put_object
 from backend.utils.file_ops import upload_file_verify
 
 router = APIRouter()
