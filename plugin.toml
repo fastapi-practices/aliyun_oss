@@ -1,6 +1,6 @@
 [plugin]
 summary = '阿里云 OSS'
-version = '0.0.4'
+version = '0.0.5'
 description = '阿里云 oss 文件上传'
 author = 'wu-clan'
 

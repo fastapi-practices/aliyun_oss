@@ -21,4 +21,6 @@
    # 基础配置
    OSS_BUCKET_NAME: str = 'fba-test'
    OSS_ENDPOINT: str = 'https://oss-cn-hangzhou.aliyuncs.com'
+   OSS_USE_SIGNED_URL: bool = True
+   OSS_SIGNED_URL_EXPIRE_SECONDS: int = 300
    ```
